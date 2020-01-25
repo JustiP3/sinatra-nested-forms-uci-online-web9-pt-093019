@@ -18,7 +18,9 @@ module FormsLab
       ships_array = params[:pirate][:ships] # array of hashes
       binding.pry
       @pirate = Pirate.new(pirate_name, pirate_weight, pirate_height)
-      @ship = Ship.new(params[pirate[ship][name]])
+      @ships = ships_array.map do |ship|
+        Ship.new(ship[:name], ship[:type], ship[:booty])
+      end
       erb :'pirates/show'
     end
 
