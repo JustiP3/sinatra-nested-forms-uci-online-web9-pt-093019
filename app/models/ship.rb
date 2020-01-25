@@ -2,7 +2,7 @@ class Ship
   @@all = []
   attr_accessor :name, :type, :booty
 
-  def initialize (name, type, booty)
+  def initialize (name => "name", type => "type", booty => "booty")
     @name = name
     @type = type
     @booty = booty
