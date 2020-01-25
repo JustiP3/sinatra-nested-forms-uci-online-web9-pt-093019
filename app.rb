@@ -12,8 +12,12 @@ module FormsLab
     end
 
     post '/pirates' do
+      pirate_name = params[:pirate][:name]
+      pirate_weight = params[:pirate][:weight]
+      pirate_height = params[:pirate][:height]
+      ships_array = params[:pirate][:ships] # array of hashes
       binding.pry
-      @pirate = Pirate.new(params[name],params[weight],params[height])
+      @pirate = Pirate.new(pirate_name, pirate_weight, pirate_height)
       @ship = Ship.new(params[pirate[ship][name]])
       erb :'pirates/show'
     end
