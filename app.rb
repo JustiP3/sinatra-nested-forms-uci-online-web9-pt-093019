@@ -12,9 +12,9 @@ module FormsLab
     end
 
     post '/pirates' do
-      pirate_name = params[:pirate][:name]
-      pirate_weight = params[:pirate][:weight]
-      pirate_height = params[:pirate][:height]
+      pirate_name = {name => params[:pirate][:name]}
+      pirate_weight = {weight => params[:pirate][:weight]}
+      pirate_height = {height => params[:pirate][:height]}
       ships_array = params[:pirate][:ships] # array of hashes
 
       @pirate = Pirate.new(pirate_name, pirate_weight, pirate_height)
